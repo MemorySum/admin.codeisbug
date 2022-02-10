@@ -1,0 +1,11 @@
+E:\GitProjectRepository\Admin.CodeIsBug\CodeIsBug.Admin.Model\bin\Debug\net6.0\CodeIsBug.Admin.Model.deps.json
+E:\GitProjectRepository\Admin.CodeIsBug\CodeIsBug.Admin.Model\bin\Debug\net6.0\CodeIsBug.Admin.Model.dll
+E:\GitProjectRepository\Admin.CodeIsBug\CodeIsBug.Admin.Model\bin\Debug\net6.0\ref\CodeIsBug.Admin.Model.dll
+E:\GitProjectRepository\Admin.CodeIsBug\CodeIsBug.Admin.Model\bin\Debug\net6.0\CodeIsBug.Admin.Model.pdb
+E:\GitProjectRepository\Admin.CodeIsBug\CodeIsBug.Admin.Model\obj\Debug\net6.0\CodeIsBug.Admin.Model.GeneratedMSBuildEditorConfig.editorconfig
+E:\GitProjectRepository\Admin.CodeIsBug\CodeIsBug.Admin.Model\obj\Debug\net6.0\CodeIsBug.Admin.Model.AssemblyInfoInputs.cache
+E:\GitProjectRepository\Admin.CodeIsBug\CodeIsBug.Admin.Model\obj\Debug\net6.0\CodeIsBug.Admin.Model.AssemblyInfo.cs
+E:\GitProjectRepository\Admin.CodeIsBug\CodeIsBug.Admin.Model\obj\Debug\net6.0\CodeIsBug.Admin.Model.csproj.CoreCompileInputs.cache
+E:\GitProjectRepository\Admin.CodeIsBug\CodeIsBug.Admin.Model\obj\Debug\net6.0\CodeIsBug.Admin.Model.dll
+E:\GitProjectRepository\Admin.CodeIsBug\CodeIsBug.Admin.Model\obj\Debug\net6.0\ref\CodeIsBug.Admin.Model.dll
+E:\GitProjectRepository\Admin.CodeIsBug\CodeIsBug.Admin.Model\obj\Debug\net6.0\CodeIsBug.Admin.Model.pdb
