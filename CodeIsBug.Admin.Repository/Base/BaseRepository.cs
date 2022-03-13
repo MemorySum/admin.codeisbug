@@ -1,5 +1,6 @@
 ﻿using CodeIsBug.Admin.Common.Config;
 using SqlSugar;
+using SqlSugar.IOC;
 
 namespace CodeIsBug.Admin.Repository.Base;
 
@@ -9,17 +10,13 @@ public class BaseRepository<T> : SimpleClient<T> where T : class, new()
     {
         if (context == null)
         {
-            base.Context = new SqlSugarScope(new ConnectionConfig()
+            Context = DbScoped.SugarScope;
+            //调式代码 用来打印SQL 
+            Context.Aop.OnLogExecuting = (sql, pars) =>
             {
-                DbType = DbType.MySql,
-                InitKeyType = InitKeyType.Attribute,
-                IsAutoCloseConnection = true,
-                ConnectionString = DBConfig.ConnectionString
-            });
-
-            base.Context.Aop.OnLogExecuting = (s, p) =>
-            {
-                Console.WriteLine(s);
+                Console.WriteLine(sql + "\r\n" +
+                                  Context.Utilities.SerializeObject(pars.ToDictionary(it => it.ParameterName,
+                                      it => it.Value)));
             };
         }
     }

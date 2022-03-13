@@ -20,7 +20,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CodeIsBug.Admin.Common\CodeIsBug.Admin.Common.csproj" />
+    <ProjectReference Include="..\CodeIsBug.Admin.Extension\CodeIsBug.Admin.Extension.csproj" />
     <ProjectReference Include="..\CodeIsBug.Admin.Model\CodeIsBug.Admin.Model.csproj" />
+    <ProjectReference Include="..\CodeIsBug.Admin.Services\CodeIsBug.Admin.Services.csproj" />
   </ItemGroup>
 
 </Project>
