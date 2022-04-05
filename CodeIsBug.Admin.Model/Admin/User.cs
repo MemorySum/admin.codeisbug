@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using SqlSugar;
+﻿using SqlSugar;
 
 namespace CodeIsBug.Admin.Model.Admin
 {

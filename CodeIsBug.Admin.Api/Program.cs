@@ -1,6 +1,9 @@
+using System.Text.Json;
+using System.Text.Json.Serialization;
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using CodeIsBug.Admin.Common.Config;
+using CodeIsBug.Admin.Common.Helper;
 using CodeIsBug.Admin.Extension;
 using SqlSugar.IOC;
 
@@ -9,27 +12,33 @@ var builder = WebApplication.CreateBuilder(args);
 IConfiguration configuration = new ConfigurationBuilder()
                             .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json")
                             .Build();
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+    options.JsonSerializerOptions.Converters.Add(new DateTimeJsonConverter("yyyy-MM-dd HH:mm:ss"));
+    options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
+
+});
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<DBConfig>(configuration.GetSection("ConnectionStrings:CodeIsBug.Admin"));
-
+builder.Services.AddAppService();
 #region 配置SqlSugar IOC
 builder.Services.AddSqlSugar(new IocConfig
-                             {
-                                 ConnectionString = DBConfig.ConnectionString,
-                                 DbType = IocDbType.MySql,
-                                 IsAutoCloseConnection = true //自动释放
-                             }); 
+{
+    ConnectionString = configuration.GetConnectionString("CodeIsBug.Admin"),
+    DbType = IocDbType.MySql,
+    IsAutoCloseConnection = true //自动释放
+});
 #endregion
 
-#region Autofac
-builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
-builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
-{
-    builder.RegisterModule(new AutofacModuleRegister());
-}); 
-#endregion
+//#region Autofac
+//builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
+//builder.Host.ConfigureContainer<ContainerBuilder>(builder =>
+//{
+//    builder.RegisterModule(new AutofacModuleRegister());
+//});
+//#endregion
 
 var app = builder.Build();
 
@@ -43,3 +52,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+

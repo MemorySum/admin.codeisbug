@@ -1,15 +1,16 @@
-﻿using CodeIsBug.Admin.Common.Helper;
+﻿using CodeIsBug.Admin.Common.Attribute;
+using CodeIsBug.Admin.Common.Helper;
 using CodeIsBug.Admin.Model.Admin;
 using CodeIsBug.Admin.Model.Dto;
-using CodeIsBug.Admin.Repository.Base;
 
-namespace CodeIsBug.Admin.Repository.Repository;
-
-public class UserRepository : BaseRepository<User>
+namespace CodeIsBug.Admin.Repository.Repository
 {
-    public async Task<User> Login(LoginInputDto dto)
+    [AppService(ServiceLifetime = LifeTime.Transient)]
+    public class UserRepository : BaseRepository<User>
     {
-        return await Context.Queryable<User>()
-            .FirstAsync(a => a.UserName.Equals(dto.UserName) && a.Password.Equals(dto.Password.Md5Hash()));
+        public async Task<User> Login(LoginInputDto user)
+        {
+            return  await Context.Queryable<User>().FirstAsync(it => it.UserName == user.UserName && it.Password == user.Password.Md5Hash());
+        }
     }
 }

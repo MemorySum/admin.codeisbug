@@ -1,4 +1,6 @@
-﻿namespace CodeIsBug.Admin.Common.Helper
+﻿using System.Text.Json.Serialization;
+
+namespace CodeIsBug.Admin.Common.Helper
 {
     /// <summary>
     ///     统一返回结果
@@ -19,12 +21,12 @@
         /// <summary>
         ///     对象
         /// </summary>
-        public object Object { get; set; }
+        public object? Object { get; set; }
 
         /// <summary>
         ///     扩展对象
         /// </summary>
-        public object ExtendObject { get; set; }
+        public object? ExtendObject { get; set; }
 
         public int Total { get; set; }
         #endregion
