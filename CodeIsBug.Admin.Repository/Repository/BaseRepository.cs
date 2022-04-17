@@ -1,9 +1,9 @@
-﻿using CodeIsBug.Admin.Extension;
+﻿using System.Data;
+using System.Linq.Expressions;
+using CodeIsBug.Admin.Extension;
 using CodeIsBug.Admin.Model;
 using SqlSugar;
 using SqlSugar.IOC;
-using System.Data;
-using System.Linq.Expressions;
 
 namespace CodeIsBug.Admin.Repository.Repository;
 

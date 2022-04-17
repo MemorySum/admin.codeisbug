@@ -1,6 +1,6 @@
-﻿using CodeIsBug.Admin.Common.Attribute;
+﻿using System.Reflection;
+using CodeIsBug.Admin.Common.Attribute;
 using Microsoft.Extensions.DependencyInjection;
-using System.Reflection;
 
 namespace CodeIsBug.Admin.Extension
 {

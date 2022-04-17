@@ -2,7 +2,6 @@
 using CodeIsBug.Admin.Model.Admin;
 using CodeIsBug.Admin.Model.Dto;
 using CodeIsBug.Admin.Services.IService;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CodeIsBug.Admin.Api.Controllers

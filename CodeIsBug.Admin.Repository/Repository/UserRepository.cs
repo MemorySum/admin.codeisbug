@@ -10,7 +10,7 @@ namespace CodeIsBug.Admin.Repository.Repository
     {
         public async Task<User> Login(LoginInputDto user)
         {
-            return  await Context.Queryable<User>().FirstAsync(it => it.UserName == user.UserName && it.Password == user.Password.Md5Hash());
+            return await Context.Queryable<User>().FirstAsync(it => it.UserName == user.UserName && it.Password == user.Password.Md5Hash());
         }
     }
 }

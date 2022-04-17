@@ -1,12 +1,7 @@
-﻿using CodeIsBug.Admin.Model;
-using SqlSugar;
-using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
+﻿using System.Data;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
+using CodeIsBug.Admin.Model;
+using SqlSugar;
 
 namespace CodeIsBug.Admin.Repository.IRepository
 {
@@ -46,7 +41,7 @@ namespace CodeIsBug.Admin.Repository.IRepository
 
         DbResult<bool> UseTran(SqlSugarClient client, Action action);
 
-        bool UseTran2(Action action); 
+        bool UseTran2(Action action);
         #endregion
 
         #region delete

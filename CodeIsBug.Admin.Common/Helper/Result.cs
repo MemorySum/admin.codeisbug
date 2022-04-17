@@ -1,6 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-namespace CodeIsBug.Admin.Common.Helper
+﻿namespace CodeIsBug.Admin.Common.Helper
 {
     /// <summary>
     ///     统一返回结果

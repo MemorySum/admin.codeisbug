@@ -1,7 +1,5 @@
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using Autofac;
-using Autofac.Extensions.DependencyInjection;
 using CodeIsBug.Admin.Common.Config;
 using CodeIsBug.Admin.Common.Helper;
 using CodeIsBug.Admin.Extension;
